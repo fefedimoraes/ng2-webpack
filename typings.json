@@ -1,0 +1,9 @@
+{
+  "name": "ng2-webpack",
+  "dependencies": {},
+  "globalDependencies": {
+    "core-js": "registry:dt/core-js#0.0.0+20160914114559",
+    "jasmine": "registry:dt/jasmine#2.5.0+20161003201800",
+    "node": "registry:env/node#6.0.0+20161011193755"
+  }
+}
