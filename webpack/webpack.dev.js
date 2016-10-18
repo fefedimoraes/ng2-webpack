@@ -12,15 +12,17 @@ module.exports = {
     devtool: 'source-map',
     devServer: {
         contentBase: path.resolve(rootDir, 'dist'),
+        historyApiFallback: true,
         port: 9000
     },
     entry: {
-        app: [ path.resolve(rootDir, 'src', 'bootstrap') ],
-        vendor: [ path.resolve(rootDir, 'src', 'vendor') ]
+        app: [path.resolve(rootDir, 'src', 'bootstrap')],
+        vendor: [path.resolve(rootDir, 'src', 'vendor')]
     },
     module: {
         loaders: [
             { loader: 'raw', test: /\.(css|html)$/ },
+            { loaders: ['raw', 'sass'], test: /\.scss$/ },
             { exclude: /node_modules/, loader: 'ts', test: /\.ts$/ }
         ]
     },
@@ -41,6 +43,6 @@ module.exports = {
         })
     ],
     resolve: {
-        extensions: [ '', '.js', '.ts' ]
+        extensions: ['', '.js', '.ts']
     }
 };
